@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>check</title>
+<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+
+<script>
+$(document).ready(function(e) {
+	/*$('ul li a').click(function(){
+		$(this).next().slideToggle('fast');
+		$(".menu").not($(this).next()).slideUp('fast');
+	})*/
+	
+	$('ul li a').click(function(e){	
+	e.preventDefault();
+		
+		if(false == $(this).next().is(':visible')){
+			$('ul li a').next().slideUp('fast');
+		}
+		$(this).next().slideToggle('fast');
+	})
+	
+});
+	
+</script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+.wrap {
+	width: 700px;
+	margin: 0 auto;
+}
+.menu{
+		display:none;
+	}
+	
+.accordion-toggle {cursor: pointer;}
+  .accordion-content {display: none;}
+  .accordion-content.default {display: block;}	
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <ul>
+  	<li>
+    <a href="#">1</a>
+    <div class="menu">1 content</div>
+    </li>
+    <li>
+    <a href="#">2</a>
+    <div class="menu">2 content</div>
+    </li>
+    <li>
+    <a href="#">3</a>
+    <div class="menu">3 content</div>
+    </li>
+    <li>
+    <a href="#">4</a>
+    <div class="menu">4 content</div>
+    </li>
+  </ul>
+  
+
+</div>
+</body>
+</html>
